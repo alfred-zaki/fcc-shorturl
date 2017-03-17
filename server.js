@@ -4,6 +4,7 @@ var MongoClient = require('mongodb').MongoClient;
 
 var app = express();
 var MongoURL = process.env.MONGOLAB_URI;
+var port = process.env.PORT || 8080;
 
 app.enable('trust proxy');
 
@@ -30,8 +31,8 @@ app.get('/', function(req, res){
   res.send('Alfred Zaki FreeCodeCamp Short URL Project');
 });
 
-app.listen(8080, function () {
-  console.log('Short URL listening on port 8080!');
+app.listen(port, function () {
+  console.log('Short URL app listening on port ' +  port + '!');
 });
 
 //Start of functions
